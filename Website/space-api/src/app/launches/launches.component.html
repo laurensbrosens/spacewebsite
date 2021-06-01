@@ -1,0 +1,41 @@
+<table id="match">
+    <tr>
+        <th>Launch hour</th>
+        <th>Date</th>
+        <th>Rocket type</th>
+        <th>Organisation</th>
+        <th>Location</th>
+        <th>Mission</th>
+        <th>View info</th>
+    </tr>
+    <tr *ngFor="let launch of launcheslist">
+        <td>{{launch.launchDate | date : 'h:mm a'}}</td>
+        <td>{{launch.launchDate | date : 'MMMM d, y'}}</td>
+        <td>{{launch.rocketType}}</td>
+        <td>{{launch.organisationName}}</td>
+        <td>{{launch.locationName}}</td>
+        <td>{{launch.missionDestination}}</td>
+        <td><button (click)="openlaunchinfopage(launch.link.href)">View launch details</button></td>
+    </tr>
+</table>
+
+<table *ngIf="launchinfo!=null" id="match">
+    <tr>
+        <td width="66%">
+            <h1>Rocket Launch {{launchinfo.launchDate | date : 'MMMM d, y'}} {{launchinfo.organisationName}}</h1>
+            <h4>Time: {{launchinfo.launchDate | date : 'MMMM d, y'}} {{launchinfo.launchDate | date : 'h:mm a'}}</h4>
+            <h4>Location: {{launchinfo.locationName}} {{launchinfo.locationLaunchPad}}</h4>
+            <h4>Goal: {{launchinfo.missionCargo}} to {{launchinfo.missionDestination}}</h4>
+            <br />
+            <h1>Mission</h1>
+            <p>{{launchinfo.missionDescription}}</p>
+            <br>
+            <h4>Success</h4>
+            <p>Mission success: {{launchinfo.missionSuccess}}</p>
+            <br>
+            <h4>Crew</h4>
+            <p>Mission crew: {{launchinfo.missionCrewed}}</p>
+        </td>
+        <td><img src={{launchinfo.rocketLink.href}} width="350"></td>
+    </tr>
+</table>

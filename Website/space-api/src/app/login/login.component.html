@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <td><button (click)="LoginRedirect()">Login</button></td>
+        <td><button (click)="Logout()">Logout</button></td>
+    </tr>
+    <tr>
+        <div *ngIf="this.icon!=''&&this.icon!=undefined">
+                <img  src={{this.icon}}>
+                <p>Welcome {{this.username}}</p>
+                <p></p>
+        </div>
+        
+        <div *ngIf="!(this.icon!=''&&this.icon!=undefined)">
+            <p>You are not currently logged in</p>
+        </div>
+    </tr>
+</table>
