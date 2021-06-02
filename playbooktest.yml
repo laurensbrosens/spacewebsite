@@ -1,7 +1,6 @@
 ---
 #Playbook test
 - hosts: centosserver
-  user: root
   tasks:
   - name: Create testfile
     file:
