@@ -1,0 +1,13 @@
+---
+#Playbook test
+- hosts: centosserver
+  user: root
+  tasks:
+  - name: Create testfile
+    file:
+      path: "/home/s116277/Desktop/test.txt"
+      state: touch
+  - name: Add line to testfile
+    lineinfile:
+      dest: /home/s116277/Desktop/test.txt
+      line: test1
