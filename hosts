@@ -1,2 +1,2 @@
 [centosserver]
-192.168.1.57 ansible_user=root ansible_password=devops2021 ansible_python_interpreter=/usr/local/bin/python3
+192.168.1.57 ansible_user=root ansible_password=devops2021 ansible_python_interpreter=/usr/bin/python3
