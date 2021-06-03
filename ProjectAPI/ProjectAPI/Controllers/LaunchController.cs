@@ -59,7 +59,7 @@ namespace ProjectAPI.Controllers
         }
 
         [Route("{id}")]
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public IActionResult GetLaunch(int id)
         {

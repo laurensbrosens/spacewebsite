@@ -6,6 +6,13 @@
     docker_container:
       name: api
       state: absent
+  - name: Build api
+    docker_image:
+      name: projectapi
+        build:
+          path: ~/Desktop/apibuild
+          source: build
+          state: present
   - name: Start new api test container
       name: api
       image: projectapi
