@@ -13,7 +13,7 @@ export class ApiserviceService {
     'Access-Control-Allow-Headers': 'Content-Type',
     'Authorization': "Bearer " + this.login.token
   };
-  public readonly url : string = "http://localhost:49774/api/v1/";
+  public readonly url : string = "http://192.168.1.57:5001/api/v1/";
   constructor(private http: HttpClient, private login: LoginserviceService) {}
   get AllLaunches() : Observable<Ilaunch[]>{
     const requestOptions = {                                                                                                                                                                                 

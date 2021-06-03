@@ -35,7 +35,7 @@ namespace ProjectAPI.Controllers
             return Ok(launches);
         }*/
         [HttpGet]
-        [Authorize]
+        //[Authorize] Enkel inloggen om de details te zien
         public IActionResult GetLaunches(int? page, int length = 2)
         {
             var launches = context.Launches.Include(d => d.Location).Include(d => d.Mission).Include(d => d.Organisation).Include(d => d.Rocket).Select(d =>
