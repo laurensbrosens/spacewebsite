@@ -14,5 +14,5 @@
         - 81:80
   - name: Copy angular build to nginx
     copy:
-      src: ~/workspace/API pipeline/Website/space-api/dist/space-api
+      src: ~/workspace/API pipeline/Website/space-api/dist/space-api/*
       dest: /home/angularserver/
