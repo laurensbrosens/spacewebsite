@@ -1,0 +1,18 @@
+---
+# Zet site in nginx container
+- hosts: centosserver
+  tasks:
+  - name: Create httpd container
+    docker_container:
+      name: angularproductionserver
+      image: httpd:2.4
+      state: started
+      restart: yes
+      volumes: 
+        - /home/angularserver/:/usr/local/apache2/htdocs/
+      ports:
+        - 82:80
+  - name: Copy angular production build to nginx
+    copy:
+      src: ~/workspace/API pipeline/Website/space-api/dist/space-api/
+      dest: /home/angularserver/
