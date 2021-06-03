@@ -11,7 +11,7 @@ COPY ProjectAPI/. ./ProjectAPI/
 WORKDIR /app/ProjectAPI
 RUN dotnet publish -c Debug -o out
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.0 AS runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY --from=build /app/ProjectAPI/out ./
 ENTRYPOINT ["dotnet", "ProjectAPI.dll"]
