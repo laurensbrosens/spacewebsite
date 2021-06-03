@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     console.log("This icon = " + this.icon)
   }
   LoginRedirect(){
-    window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=493056234706-j2hk0h5p8bj994079498d2cghvll1n4m.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2Flogin&scope=profile http://mail.google.com&nonce=0394852-3190485-2490358&response_type=id_token token'
+    window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth?client_id=493056234706-j2hk0h5p8bj994079498d2cghvll1n4m.apps.googleusercontent.com&redirect_uri=http%3A%2F%2F192.168.1.57%3A5001%2Flogin&scope=profile http://mail.google.com&nonce=0394852-3190485-2490358&response_type=id_token token'
   }
   Logout(){
     this.login.token = null;
