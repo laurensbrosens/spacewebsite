@@ -10,7 +10,7 @@ namespace ProjectAPI
     {
         public static void Initialize(DBContext context)
         {
-            context.Database.EnsureDeleted();
+            //context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
             var testorganisation = new Organisation()
             {
