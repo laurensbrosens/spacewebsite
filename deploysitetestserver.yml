@@ -1,0 +1,17 @@
+---
+# Zet site in nginx container
+- hosts: centosserver
+  tasks:
+  - name: Create nginx container
+    docker_container:
+      name: angulartestserver
+      image: nginx
+      state: started
+      restart: yes
+      volumes: 
+        - /home/angularserver/:/usr/share/nginx/html
+      ports:
+        - 81:80
+  - name: Copy angular build to nginx
+    shell:
+      sshpass -p "devops2021" scp -r root@192.168.1.57:/var/jenkins_home/workspace/API pipeline/ProjectAPI/Website/space-api/dist/space-api /home/angularserver/
