@@ -14,4 +14,4 @@
         - 81:80
   - name: Copy angular build to nginx
     shell:
-      sshpass -p "devops2021" scp -r root@192.168.1.57:/var/jenkins_home/workspace/API_pipeline/ProjectAPI/Website/space-api/dist/space-api /home/angularserver/
+      sshpass -p "devops2021" scp -r root@192.168.1.57:/var/jenkins_home/workspace/API_pipeline/ProjectAPI/Website/space-api/dist/space-api/ /home/angularserver/
