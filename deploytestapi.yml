@@ -5,9 +5,9 @@
   - name: Build api
     community.docker.docker_image:
       name: projectapi
+      state: present
       build:
         path: ~/Desktop/apibuild/.
-        state: present
         args:
           build_version: 'Debug'
       source: build
