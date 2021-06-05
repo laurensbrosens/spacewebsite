@@ -8,7 +8,7 @@
       build:
         path: ~/Desktop/apibuild/.
         state: present
-        args:
+        buildargs:
           build_version: 'Debug'
         source: build
   - name: Start new api test container
