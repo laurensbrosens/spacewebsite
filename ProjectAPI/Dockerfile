@@ -3,9 +3,9 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
-#COPY *.sln .
-#COPY ProjectAPI/*.csproj ./ProjectAPI/
-#RUN dotnet restore -p:RestoreUseSkipNonexistentTargets=false -nowarn:msb3202,nu1503
+COPY *.sln .
+COPY ProjectAPI/*.csproj ./ProjectAPI/
+RUN dotnet restore -p:RestoreUseSkipNonexistentTargets=false -nowarn:msb3202,nu1503
 
 # copy everything else and build app
 COPY ProjectAPI/. ./ProjectAPI/

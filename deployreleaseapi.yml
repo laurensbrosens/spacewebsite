@@ -3,7 +3,7 @@
 - hosts: centosserver
   tasks:
   - name: Build api
-    command: "docker build --no-cache --build-arg build_version=Release -t projectapi /home/s116277/Desktop/apibuild/"
+    command: "docker build -t projectapi /home/s116277/Desktop/apibuild/"
   - name: Start new api release container
     docker_container:
       name: apirelease
