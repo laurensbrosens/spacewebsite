@@ -3,12 +3,12 @@
 - hosts: centosserver
   tasks:
   - name: Build api
-    docker_image:
+    community.docker.docker_image:
       name: projectapi
       build:
         path: ~/Desktop/apibuild/.
         state: present
-        env:
+        args:
           build_version: 'Debug'
         source: build
   - name: Start new api test container
