@@ -1,0 +1,21 @@
+---
+# Maakt asp.net api docker container
+- hosts: centosserver
+  tasks:
+  - name: Build release api
+    community.docker.docker_image:
+      name: projectapirelease
+      state: present
+      build:
+        path: ~/Desktop/apibuild/.
+        args:
+          build_version: 'Release'
+      source: build
+  - name: Start new api release container
+    docker_container:
+      name: apirelease
+      image: projectapirelease
+      state: started
+      restart: yes
+      ports:
+        - 5002:80
