@@ -4,7 +4,7 @@
   tasks:
   - name: Copy api project to centos to build release version
     copy:
-      src: /var/jenkins_home/workspace/API pipeline/ProjectAPI
+      src: /var/jenkins_home/workspace/API pipeline/ProjectAPI/
       dest: /home/s116277/Desktop/apibuild/
   - name: Build api
     command: "docker build --no-cache --build-arg build_version=Release -t projectapi /home/s116277/Desktop/apibuild/"
