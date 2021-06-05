@@ -2,10 +2,6 @@
 # Maakt asp.net api docker container
 - hosts: centosserver
   tasks:
-  - name: Copy api project to centos to build debug version
-    copy:
-      src: /var/jenkins_home/workspace/API pipeline/ProjectAPI/
-      dest: /home/s116277/Desktop/apibuild/
   - name: Build api
     command: "docker build --no-cache --build-arg build_version=Debug -t projectapi /home/s116277/Desktop/apibuild/"
   - name: Start new api test container
