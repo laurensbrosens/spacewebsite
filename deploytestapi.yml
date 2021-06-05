@@ -3,7 +3,7 @@
 - hosts: centosserver
   tasks:
   - name: Build api
-    docker_image:
+    community.docker.docker_image:
       name: projectapi
       build:
         path: ~/Desktop/apibuild/.
