@@ -7,7 +7,7 @@
       name: projectapirelease
       state: present
       build:
-        path: ~/Desktop/apibuild/.
+        path: /home/s116277/Desktop/apibuild/.
         args:
           build_version: 'Release'
       source: build

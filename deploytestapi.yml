@@ -7,7 +7,7 @@
       name: projectapi
       state: present
       build:
-        path: ~/Desktop/apibuild/.
+        path: /home/s116277/Desktop/apibuild/.
         args:
           build_version: 'Debug'
       source: build
