@@ -14,5 +14,5 @@ RUN dotnet publish -c Debug
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
-COPY bin/Release/netcoreapp3.1/publish/ App/
+COPY bin/Debug/netcoreapp3.1/publish/ App/
 ENTRYPOINT ["dotnet", "ProjectAPI.dll"]
