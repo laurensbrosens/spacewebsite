@@ -10,6 +10,7 @@
     community.docker.docker_image:
       name: projectapi
       build:
+        nocache: yes
         path: /home/s116277/Desktop/apibuild/.
         args:
           build_version: 'Debug'
