@@ -10,7 +10,7 @@
         state: present
         args:
           build_version: 'Debug'
-        source: build
+      source: build
   - name: Start new api test container
     docker_container:
       name: api
