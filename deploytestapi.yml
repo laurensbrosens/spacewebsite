@@ -3,7 +3,14 @@
 - hosts: centosserver
   tasks:
   - name: Build api
-    command: "docker build -t projectapi /home/s116277/Desktop/apibuild/"
+    community.docker.docker_image:
+      name: projectapi
+      build:
+        nocache: yes
+        path: /home/s116277/Desktop/apibuild/.
+        args:
+          build_version: 'Debug'
+      source: build
   - name: Start new api test container
     docker_container:
       name: api
