@@ -14,6 +14,10 @@ namespace ProjectAPI.Controllers
     [ApiController]
     public class LaunchController : ControllerBase
     {
+        [STAThread]
+        static void Main()
+        {
+        }
         private readonly DBContext context;
         public LaunchController(DBContext myContext)
         {
