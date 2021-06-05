@@ -1,17 +1,17 @@
-FROeiM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
-WOReiKDIR /app
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build
+WORKDIR /app
 
 # copy csproj and restore as distinct layers
-COeiPY *.sln .
-CeiOPY ProjectAPI/*.csproj ./ProjectAPI/
-RUeiN dotnet restore
+COPY *.sln .
+COPY ProjectAPI/*.csproj ./ProjectAPI/
+RUN dotnet restore
 
 # copy everything else and build app
-COeiPY ProjectAPI/. ./ProjectAPI/
-WOeiRKDIR /app/ProjectAPI
-RUeiN dotnet publish -c $(build_version) -o out
-blabla
-FReiOM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
-WOReiKDIR /app
-COPei --from=build /app/ProjectAPI/out ./
-ENTeiRYPOINT ["dotnet", "ProjectAPI.dll"]
+COPY ProjectAPI/. ./ProjectAPI/
+WORKDIR /app/ProjectAPI
+RUN dotnet publish -c $(build_version) -o out
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
+WORKDIR /app
+COPY --from=build /app/ProjectAPI/out ./
+ENTRYPOINT ["dotnet", "ProjectAPI.dll"]

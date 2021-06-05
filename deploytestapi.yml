@@ -7,14 +7,7 @@
       src: ~/workspace/API pipeline/ProjectAPI
       dest: /home/s116277/Desktop/apibuild/
   - name: Build api
-    community.docker.docker_image:
-      name: projectapi
-      build:
-        nocache: yes
-        path: /home/s116277/Desktop/apibuild/.
-        args:
-          build_version: 'Debug'
-      source: build
+    command: "docker build --no-cache --build-arg build_version=Debug -t projectapi ."
   - name: Start new api test container
     docker_container:
       name: api

@@ -6,15 +6,8 @@
     copy:
       src: ~/workspace/API pipeline/ProjectAPI
       dest: /home/s116277/Desktop/apibuild/
-  - name: Build release api
-    community.docker.docker_image:
-      name: projectapi
-      build:
-        nocache: yes
-        path: /home/s116277/Desktop/apibuild/.
-        args:
-          build_version: 'Release'
-      source: build
+  - name: Build api
+    command: "docker build --no-cache --build-arg build_version=Release -t projectapi ."
   - name: Start new api release container
     docker_container:
       name: apirelease
