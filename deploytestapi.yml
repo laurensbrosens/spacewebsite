@@ -3,7 +3,7 @@
 - hosts: centosserver
   tasks:
   - name: Update image
-    command: "docker build --no-cache -t projectapi /home/s116277/Desktop/apibuild/"
+    command: "docker build --no-cache -t projectapi /home/s116277/Desktop/apibuild/ProjectAPI"
   - name: Build api
     community.docker.docker_image:
       name: projectapi
