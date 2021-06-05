@@ -2,6 +2,8 @@
 # Maakt asp.net api docker container
 - hosts: centosserver
   tasks:
+  - name: Update image
+    command: "docker build -t projectapi /home/s116277/Desktop/apibuild/"
   - name: Build api
     community.docker.docker_image:
       name: projectapi
