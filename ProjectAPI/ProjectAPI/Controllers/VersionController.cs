@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectAPI.Controllers
 {
-    [Route("api/v1")]
+    [Route("api/v2")]
     [ApiController]
     public class VersionController : ControllerBase
     {

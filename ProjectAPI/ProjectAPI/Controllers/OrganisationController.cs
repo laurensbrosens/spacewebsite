@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ProjectAPI.Controllers
 {
-    [Route("api/v1/Organisations")]
+    [Route("api/v2/Organisations")]
     [ApiController]
     public class OrganisationController : ControllerBase
     {

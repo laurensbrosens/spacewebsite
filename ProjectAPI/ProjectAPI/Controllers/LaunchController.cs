@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProjectAPI.Controllers
 {
-    [Route("api/v1/Launches")]
+    [Route("api/v2/Launches")]
     [ApiController]
     public class LaunchController : ControllerBase
     {
