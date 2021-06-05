@@ -15,7 +15,7 @@ namespace ProjectAPI.Controllers
         [Route("Test")]
         public IActionResult GetTest()
         {
-            return Ok("Finale");
+            return Ok("Finale2");
         }
     }
 }
