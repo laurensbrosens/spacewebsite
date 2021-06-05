@@ -2,10 +2,6 @@
 # Maakt asp.net api docker container
 - hosts: centosserver
   tasks:
-  - name: Remove old container
-    docker_container:
-      name: api
-      state: absent
   - name: Build api
     docker_image:
       name: projectapi
