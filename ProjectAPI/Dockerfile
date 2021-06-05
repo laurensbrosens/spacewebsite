@@ -9,7 +9,7 @@ RUN dotnet restore
 # copy everything else and build app
 COPY ProjectAPI/. ./ProjectAPI/
 WORKDIR /app/ProjectAPI
-RUN dotnet publish -c Debug -o out
+RUN dotnet publish -c $(build_version) -o out
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app

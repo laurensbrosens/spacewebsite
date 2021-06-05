@@ -10,9 +10,12 @@
     docker_image:
       name: projectapi
         build:
-          path: ~/Desktop/apibuild
-          source: build
+          path: ~/Desktop/apibuild/.
           state: present
+          name: projectapi
+          args:
+            build_version: 'Debug'
+        source: build
   - name: Start new api test container
       name: api
       image: projectapi
