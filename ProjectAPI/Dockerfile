@@ -14,5 +14,5 @@ RUN dotnet publish -c Release
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
-COPY /src/bin/Release/netcoreapp3.1/publish App/
+COPY --from=build-env /app /app/
 ENTRYPOINT ["dotnet", "ProjectAPI.dll"]
