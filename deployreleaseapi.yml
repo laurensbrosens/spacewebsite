@@ -4,7 +4,7 @@
   tasks:
   - name: Build release api
     community.docker.docker_image:
-      name: projectapirelease
+      name: projectapi
       state: present
       build:
         path: /home/s116277/Desktop/apibuild/.
@@ -14,7 +14,7 @@
   - name: Start new api release container
     docker_container:
       name: apirelease
-      image: projectapirelease
+      image: projectapi
       state: started
       restart: yes
       ports:
