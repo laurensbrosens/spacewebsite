@@ -7,7 +7,7 @@
       src: ~/workspace/API pipeline/ProjectAPI
       dest: /home/s116277/Desktop/apibuild/
   - name: Build api
-    command: "docker build --no-cache --build-arg build_version=Release -t projectapi ."
+    command: "docker build --no-cache --build-arg build_version=Release -t projectapi /home/s116277/Desktop/apibuild/"
   - name: Start new api release container
     docker_container:
       name: apirelease
