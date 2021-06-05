@@ -19,12 +19,6 @@ namespace ProjectAPI.Controllers
         {
             context = myContext;
         }
-        [HttpGet]
-        [Route("Test")]
-        public IActionResult GetTest()
-        {
-            return Ok("Het werkt");
-        }
         /*
         [HttpGet]
         [Authorize]
