@@ -14,12 +14,5 @@ RUN dotnet publish -c Release
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
-RUN ls -l
-WORKDIR /app/bin
-RUN ls -l
-WORKDIR /app/Release
-RUN ls -l
-WORKDIR /app/Release/netcoreapp3.1
-RUN ls -l
-COPY --from=0 /app/bin/Release/netcoreapp3.1/publish /app/
+COPY --from=0 /app/ProjectAPI/ProjectAPI/bin/Release/netcoreapp3.1/publish ./
 ENTRYPOINT ["dotnet", "ProjectAPI.dll"]
