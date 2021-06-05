@@ -10,9 +10,9 @@ RUN dotnet restore -p:RestoreUseSkipNonexistentTargets=false -nowarn:msb3202,nu1
 # copy everything else and build app
 COPY ProjectAPI/. ./ProjectAPI/
 WORKDIR /app/ProjectAPI
-RUN dotnet publish -c Debug
+RUN dotnet publish -c Release
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
-COPY bin/Debug/netcoreapp3.1/publish/ App/
+COPY bin/Release/netcoreapp3.1/publish/ App/
 ENTRYPOINT ["dotnet", "ProjectAPI.dll"]
